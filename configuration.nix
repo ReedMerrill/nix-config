@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -29,8 +29,8 @@
 
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   
 
   # Configure keymap in X11
@@ -40,9 +40,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  Enable sound
-  services.pulseaudio.enable = true;
-  OR
+  # Enable sound
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -67,9 +65,8 @@
     curl
     firefox
     git
-    gnomeExtensions.tiling-shell
     neovim
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     wl-clipboard
     inputs.alejandra.packages.${pkgs.system}.default
@@ -94,11 +91,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
