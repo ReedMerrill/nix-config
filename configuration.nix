@@ -56,12 +56,10 @@
     hashedPassword = "$y$j9T$rZhaAGm2lw8wa6Ehqgg.p1$thDowg7QaNgqicgI.02oDnBtKxu2wSJaDzMzDSX9sf3";
   };
 
-  # programs.firefox.enable = true;
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
 
   environment.systemPackages = with pkgs; [
+    alejandra
     curl
     firefox
     git
@@ -69,10 +67,11 @@
     vim
     wget
     wl-clipboard
-    inputs.alejandra.packages.${pkgs.system}.default
+    # inputs.alejandra.packages.${pkgs.system}.default
     inputs.zen-browser.packages.${pkgs.system}.twilight
   ];
 
+  programs.firefox.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
