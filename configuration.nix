@@ -56,13 +56,14 @@
     hashedPassword = "$y$j9T$rZhaAGm2lw8wa6Ehqgg.p1$thDowg7QaNgqicgI.02oDnBtKxu2wSJaDzMzDSX9sf3";
   };
 
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
     alejandra
     curl
     firefox
     git
+    lazygit
     neovim
     vim
     wget
@@ -72,6 +73,7 @@
   ];
 
   programs.firefox.enable = true;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
