@@ -61,10 +61,14 @@
   environment.systemPackages = with pkgs; [
     alejandra
     curl
+    eza
+    fd
     firefox
+    fzf
     git
     lazygit
     neovim
+    ripgrep
     vim
     wget
     wl-clipboard

@@ -19,7 +19,7 @@
       # makes inputs avaiable to all modules
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./nixos/configuration.nix
       ];
     };
   };
