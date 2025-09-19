@@ -23,38 +23,27 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  
+  services.xserver.windowManager.bspwm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
-  services.xserver.xkb.options = "caps:escape";
+  services.xserver.xkb.options = "caps:swapescape";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
+  services.pipewire.enable = true;
+  services.pipewire.pulse.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.reed = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    hashedPassword = "$y$j9T$rZhaAGm2lw8wa6Ehqgg.p1$thDowg7QaNgqicgI.02oDnBtKxu2wSJaDzMzDSX9sf3";
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -65,18 +54,40 @@
     fd
     firefox
     fzf
+    gemini-cli
     git
+    kanata
     lazygit
+    lua
     neovim
+    nerd-fonts._0xproto
+    nodejs_24
+    python313
+    ranger
     ripgrep
-    vim
+    rofi
+    starship
+    stow
+    sxhkd
+    tmux
+    wezterm
     wget
     wl-clipboard
-    # inputs.alejandra.packages.${pkgs.system}.default
+    zsh
     inputs.zen-browser.packages.${pkgs.system}.twilight
   ];
 
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.reed = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    hashedPassword = "$y$j9T$rZhaAGm2lw8wa6Ehqgg.p1$thDowg7QaNgqicgI.02oDnBtKxu2wSJaDzMzDSX9sf3";
+  };
+
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
