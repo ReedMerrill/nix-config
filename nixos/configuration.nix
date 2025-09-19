@@ -73,6 +73,7 @@
     wezterm
     wget
     wl-clipboard
+    zoxide
     zsh
     inputs.zen-browser.packages.${pkgs.system}.twilight
   ];
