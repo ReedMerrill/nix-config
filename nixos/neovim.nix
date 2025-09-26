@@ -2,7 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    alejandra
     neovim
+
+    # formatters
+    alejandra
+
+    # Language Servers
+    emmet-ls
   ];
 }

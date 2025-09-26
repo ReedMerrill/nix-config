@@ -54,8 +54,7 @@
 
   environment.systemPackages = with pkgs; [
     acpi
-    alejandra
-    neovim
+    android-studio
     curl
     eza
     fd
@@ -77,6 +76,8 @@
     starship
     stow
     sxhkd
+    syncthing
+    tailscale
     tmux
     unzip
     wezterm
@@ -88,6 +89,7 @@
     inputs.zen-browser.packages.${pkgs.system}.twilight
   ];
 
+  nixpkgs.config.allowUnfree = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.reed = {
