@@ -27,7 +27,12 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+  services.tailscale.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "reed";
+  };
+
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.windowManager.bspwm.enable = true;
   services.libinput = {
@@ -76,8 +81,6 @@
     starship
     stow
     sxhkd
-    syncthing
-    tailscale
     tmux
     unzip
     wezterm
