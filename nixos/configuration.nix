@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./neovim.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -54,6 +55,7 @@
   environment.systemPackages = with pkgs; [
     acpi
     alejandra
+    neovim
     curl
     eza
     fd
@@ -66,7 +68,6 @@
     lazygit
     lightdm
     lua
-    neovim
     nerd-fonts._0xproto
     nodejs_24
     python313
@@ -80,7 +81,7 @@
     unzip
     wezterm
     wget
-    wl-clipboard
+    xclip
     xxd
     zoxide
     zsh
