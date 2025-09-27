@@ -74,6 +74,7 @@
     lua
     nerd-fonts._0xproto
     nodejs_24
+    openjdk11-bootstrap
     python313
     ranger
     ripgrep
