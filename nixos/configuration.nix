@@ -31,6 +31,8 @@
   services.syncthing = {
     enable = true;
     user = "reed";
+    dataDir = "/home/reed/.local/share/syncthing";
+    configDir = "/home/reed/.config/syncthing";
   };
 
   services.xserver.displayManager.lightdm.enable = true;
