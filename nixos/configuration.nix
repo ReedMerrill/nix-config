@@ -14,8 +14,13 @@
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/Edmonton";
+  services.timesyncd.enable = true;
+  # ensure every app sees the correct time zone
+  environment.variables = {
+    TZ = "America/Edmonton";
+  };
+
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
