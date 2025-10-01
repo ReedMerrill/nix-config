@@ -65,37 +65,48 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
+    # nvim
+    emmet-ls
+
+    # dev
+    go
+    jdk24
+    lua
+    nodejs_24
+    python313
+
+    # utils
     acpi
-    android-studio
+    brightnessctl
     curl
     eza
     fd
-    firefox
     fzf
-    gemini-cli
-    git
-    go
-    kanata
-    lazygit
-    lightdm
-    lua
-    nerd-fonts._0xproto
-    nodejs_24
-    openjdk11-bootstrap
-    python313
-    ranger
-    ripgrep
-    rofi
-    starship
+    pamixer
     stow
-    sxhkd
-    tmux
-    unzip
-    wezterm
     wget
     xclip
     xxd
     zoxide
+    wireplumber
+
+    # other
+    android-studio
+    firefox
+    gemini-cli
+    git
+    kanata
+    lazygit
+    lightdm
+    nerd-fonts._0xproto
+    ranger
+    ripgrep
+    rofi
+    starship
+    sxhkd
+    tmux
+    unzip
+    wezterm
     zsh
     inputs.zen-browser.packages.${pkgs.system}.twilight
   ];
