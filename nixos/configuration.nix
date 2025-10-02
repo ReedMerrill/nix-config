@@ -91,7 +91,6 @@
     wireplumber
 
     # other
-    android-studio
     firefox
     gemini-cli
     git
